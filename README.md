@@ -35,7 +35,6 @@ This project demonstrates:
 ❌ Error Example
 
 ```json
-Copy code
 {
   "error": "Name must not be empty"
 }
