@@ -48,7 +48,6 @@ Tomcat	Embedded	Application server
 JSON	Native	Response formatting
 
 🧱 Project Structure
-
 qa-demo/
  ┣ src/
  ┃ ┣ main/java/com/amghar/qademo/
@@ -60,6 +59,7 @@ qa-demo/
  ┃ ┃ ┗ application.properties
  ┣ pom.xml
  ┗ README.md
+
  
 🧪 Run Locally
 1️⃣ Clone the Repository
@@ -85,7 +85,7 @@ Handles 404 and 500 errors gracefully using GlobalExceptionHandler
 
 Compatible with Postman, REST Assured, or Cypress API tests
 
-Ready for integration into Jenkins or GitHub Actions pipelines
+Ready for integration into Jenkins or GitHub Actions pipeline
 
 👨‍💻 Author
 Spide Amghar
