@@ -1,93 +1,129 @@
-# QA Demo Project
+🧪 QA Demo – Spring Boot REST API
 
-A clean **Spring Boot 3.4** demo showcasing REST API structure, error handling, and environment configuration best practices.  
-Designed as a minimal, production-grade template for backend testing, automation demos, and QA validation workflows.
+A professional Spring Boot QA testing demo project designed to simulate real-world backend QA scenarios.
+It includes REST endpoints, validation, structured error handling, and automated JUnit 5 + MockMvc tests.
 
----
+🚀 Features
 
-## 🚀 Overview
+✅ RESTful API built with Spring Boot 3.4.11
 
-This project demonstrates:
+✅ Mock test automation endpoint for QA simulation
 
-- ✅ Controller-Service architecture  
-- ✅ Structured API responses  
-- ✅ Global error handling (no Whitelabel pages)  
-- ✅ Maven build + Java 21 setup  
-- ✅ REST endpoint testing base  
+✅ JUnit 5 + MockMvc automated tests
 
----
+✅ Global error handling
 
-## 🧩 API Endpoints
+✅ Ready-to-deploy Maven setup
 
-| Method | Endpoint | Description | Example |
-|--------|-----------|--------------|----------|
-| `GET` | `/api/hello/{name}` | Returns personalized greeting | `/api/hello/Spide` |
-| `GET` | `/api/hello` | Returns default QA status message | `/api/hello` |
+✅ Clean code & layered structure
 
-### ✅ Response Example
-```json
-{
-  "status": "QA Demo Active",
-  "message": "Hello, Spide!"
-}
-```
-
-❌ Error Example
-
-```json
-{
-  "error": "Name must not be empty"
-}
-```
-⚙️ Tech Stack
-Component	Version	Purpose
-Java	21	Main programming language
-Spring Boot	3.4.11	Web application framework
-Maven	3.9.11	Build and dependency management
-Tomcat	Embedded	Application server
-JSON	Native	Response formatting
-
-🧱 Project Structure
+🧩 Project Structure
 qa-demo/
- ┣ src/
- ┃ ┣ main/java/com/amghar/qademo/
- ┃ ┃ ┣ controller/
- ┃ ┃ ┃ ┗ HelloController.java
- ┃ ┃ ┗ exception/
- ┃ ┃   ┗ GlobalExceptionHandler.java
- ┃ ┣ resources/
- ┃ ┃ ┗ application.properties
- ┣ pom.xml
- ┗ README.md
+│
+├── src/
+│   ├── main/
+│   │   └── java/com/amghar/qademo/
+│   │       ├── QaDemoApplication.java
+│   │       └── controller/
+│   │           ├── HelloController.java
+│   │           └── TestReportController.java
+│   │
+│   └── test/
+│       └── java/com/amghar/qademo/controller/
+│           ├── HelloControllerTest.java
+│           └── TestReportControllerTest.java
+│
+├── pom.xml
+└── README.md
 
- 
-🧪 Run Locally
-1️⃣ Clone the Repository
-git clone https://github.com/SpideAmg/qa-demo.git
-cd qa-demo
+⚙️ Setup & Run
+1️⃣ Prerequisites
+
+Java 21
+
+Maven 3.9+
+
+IntelliJ IDEA or VS Code
 
 2️⃣ Run the Application
 mvn spring-boot:run
 
-3️⃣ Test the Endpoint
-Open your browser or Postman and go to:
-👉 http://localhost:8080/api/hello/Spide
 
-🔍 QA / Automation Use Cases
-API smoke testing baseline
+Application will start on:
 
-Integration environment setup template
+http://localhost:8080
 
-Base project for QA training, demos, or test framework integration
+🧠 API Endpoints
+1. GET /api/hello/{name}
 
-🧠 Notes
-Handles 404 and 500 errors gracefully using GlobalExceptionHandler
+Returns a greeting and QA status.
 
-Compatible with Postman, REST Assured, or Cypress API tests
+✅ Example Request
+GET http://localhost:8080/api/hello/Spide
 
-Ready for integration into Jenkins or GitHub Actions pipeline
+✅ Example Response
+{
+  "status": "QA Demo Active",
+  "message": "Hello, Spide!"
+}
 
-👨‍💻 Author
-Spide Amghar
-QA Engineer / Software Engineer in Test
-📎 GitHub Profile
+❌ Error Example
+GET http://localhost:8080/api/hello/
+
+{
+  "error": "Name must not be empty"
+}
+
+2. GET /api/test-report
+
+Returns mock QA test results.
+
+✅ Example Response
+{
+  "project": "QA Demo API",
+  "executedAt": "2025-11-09T16:00:00",
+  "summary": {
+    "totalTests": 12,
+    "passed": 10,
+    "failed": 2,
+    "passRate": "83.3%"
+  },
+  "details": [
+    {"testCase": "Login Page - Valid Credentials", "status": "PASSED", "duration": "1.3s"},
+    {"testCase": "Login Page - Invalid Credentials", "status": "PASSED", "duration": "1.2s"},
+    {"testCase": "User Registration - Missing Email", "status": "FAILED", "duration": "1.6s"},
+    {"testCase": "Cart Checkout - Empty Cart", "status": "FAILED", "duration": "1.8s"}
+  ]
+}
+
+🧪 Automated Tests
+Run All Tests
+mvn test
+
+Test Coverage
+
+✅ HelloControllerTest – validates /api/hello/{name}
+
+✅ TestReportControllerTest – validates /api/test-report
+
+Expected output:
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
+
+🧰 Tech Stack
+Layer	Technology
+Backend	Spring Boot 3.4.11
+Language	Java 21
+Build Tool	Maven
+Testing	JUnit 5, MockMvc, AssertJ, Mockito
+API Format	JSON (REST)
+📦 Build for Production
+mvn clean package
+java -jar target/qa-demo-0.0.1-SNAPSHOT.jar
+
+👤 Author Amghar 
+🧠 QA Automation Engineer
+📍 New York, USA
+🔗 LinkedIn
+ | GitHub
