@@ -18,6 +18,7 @@ It includes REST endpoints, validation, structured error handling, and automated
 ✅ Clean, layered structure
 
 🧩 Project Structure
+
 qa-demo/
 │
 ├── src/
@@ -35,3 +36,4 @@ qa-demo/
 │
 ├── pom.xml
 └── README.md
+
