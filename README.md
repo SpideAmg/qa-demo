@@ -17,23 +17,25 @@ It includes REST endpoints, validation, structured error handling, and automated
 
 ✅ Clean, layered structure
 
-🧩 Project Structure
 
 qa-demo/
 │
 ├── src/
 │   ├── main/
-│   │   └── java/com/amghar/qademo/
-│   │       ├── QaDemoApplication.java
-│   │       └── controller/
-│   │           ├── HelloController.java
-│   │           └── TestReportController.java
+│   │   └── java/
+│   │       └── com/amghar/qademo/
+│   │           ├── QaDemoApplication.java
+│   │           └── controller/
+│   │               ├── HelloController.java
+│   │               └── TestReportController.java
 │   │
 │   └── test/
-│       └── java/com/amghar/qademo/controller/
-│           ├── HelloControllerTest.java
-│           └── TestReportControllerTest.java
+│       └── java/
+│           └── com/amghar/qademo/controller/
+│               ├── HelloControllerTest.java
+│               └── TestReportControllerTest.java
 │
 ├── pom.xml
 └── README.md
+
 
